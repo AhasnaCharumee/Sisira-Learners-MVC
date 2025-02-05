@@ -1,0 +1,217 @@
+/* AnchorPane Background */
+.anchor-pane {
+    -fx-background-color: #f0f4f8; /* Light Blue-Gray */
+}
+
+/* Button Styling */
+.button {
+    -fx-background-color: #c87317; /* Yellow for primary buttons */
+    -fx-text-fill:  #ffffff;        /* Black text for contrast */
+    -fx-font-size: 14px;           /* Readable font size */
+    -fx-font-weight: bold;         /* Bold for emphasis */
+    -fx-padding: 10px 20px;        /* Comfortable padding */
+    -fx-background-radius: 20px;   /* Rounded corners */
+    -fx-border-color: #FFC800;    /* Black border */
+    -fx-border-width: 2px;
+    -fx-border-radius: 20;
+
+}
+*{
+    -fx-font-family: Ubuntu;
+}
+
+
+
+/* Button Hover Effect */
+.button:hover {
+    -fx-background-color: #ffffff; /* Color on hover */
+    -fx-text-fill: #052459;
+}
+
+/* TableView Styling */
+.table-view {
+    -fx-border-color: #000000;     /* Black border */
+    -fx-border-width: 10px;         /* Slightly thick border */
+    -fx-border-radius: 20px;        /* Rounded corners */
+    -fx-background-color: #ffffff; /* White table background */
+}
+
+/* Header Styling */
+.table-view .column-header {
+    -fx-background-color: #ffd700; /* Yellow header */
+    -fx-text-fill: #000000;        /* Black text */
+    -fx-font-weight: bold;         /* Bold font */
+    -fx-font-size: 14px;
+    -fx-border-radius: 20px;  /* Slightly larger font size */
+}
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(#94d2bd 0%,#1a759f 100%);
+}
+
+/* Row Styling */
+.table-row-cell:odd {
+    -fx-background-color: #f5f5f5; /* Off-white for alternating rows */
+}
+
+.table-row-cell:even {
+    -fx-background-color: white; /* Standard white for rows */
+}
+
+/* Row Hover */
+.table-row-cell:hover {
+    -fx-background-color: #ffe066; /* Light yellow on hover */
+}
+
+/* Selected Row */
+.table-row-cell:selected {
+    -fx-background-color: #000000; /* Black for selected rows */
+    -fx-text-fill: #ffd700;        /* Yellow text */
+    -fx-font-weight: bold;         /* Bold for selected state */
+}
+
+
+
+/* Labels */
+.label {
+              /* Standard font size */
+    -fx-text-fill: #000000;        /* Black for readability */
+    -fx-font-weight: bold;         /* Bold labels */
+}
+
+.hbox-style {
+
+    -fx-spacing: 15; /* Spacing between items in HBox */
+}
+
+.image-icon{
+
+}
+.image-icon:hover{
+    -fx-effect: dropshadow(gaussian, #ffc300, 10, 0.5, 0.0, 0.0);
+
+}
+.image-icon2{
+
+}
+.image-icon2:hover{
+    -fx-effect: dropshadow(gaussian, #000000, 8, 0.3, 0.0, 0.0);
+
+}
+
+
+
+/* table_card.css */
+
+.table-view {
+    -fx-border-color: transparent; /* Border color around the table */
+    -fx-background-color: transparent; /* Background color for the table */
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent; /* Header background color */
+    -fx-text-fill: transparent; /* Header text color */
+    -fx-font-weight: bold; /* Make header text bold */
+    -fx-padding: 10; /* Padding for header */
+    -fx-border-color: transparent; /* Light gray border for header */
+    -fx-border-width: 0 0 1 0; /* Only bottom border */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 1); /* Shadow effect for depth */
+    -fx-background-radius: 30; /* Rounded corners for header */
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: white; /* Default background color for each row */
+    -fx-padding: 20 15; /* Increased vertical padding for cells */
+    -fx-border-color: transparent; /* Remove border for each row */
+    -fx-border-width: 0; /* No border width */
+    -fx-background-insets: 5; /* Space around the row content */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 1); /* Shadow effect for depth */
+    -fx-background-radius: 30; /* Rounded corners for rows */
+}
+
+/* Alternating row colors */
+.table-view .table-row-cell.even {
+    -fx-background-color: #f9f9f9; /* Light gray for even rows */
+}
+
+.table-view .table-row-cell.odd {
+    -fx-background-color: #85929e; /* White for odd rows */
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #000000; /* Black for selected rows */
+    -fx-text-fill: #ffd700;        /* Yellow text */
+    -fx-font-weight: bold;   /* Change text color for selected row */
+    -fx-padding: 20 15; /* Keep padding consistent on selection */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 1); /* Embossed effect for selected row */
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #72a1e8; /* Change background color for hovered row */
+    -fx-padding: 20 15; /* Keep padding consistent on hover */
+}
+
+/* Centering the text in table cells */
+.table-view .table-cell {
+    -fx-alignment: CENTER; /* Center align the text */
+}
+
+/* Hide vertical scrollbar */
+.table-view .scroll-bar:vertical {
+    -fx-pref-width: 0;  /* Set preferred width to 0 */
+    -fx-min-width: 0;   /* Set minimum width to 0 */
+    -fx-max-width: 0;   /* Set maximum width to 0 */
+    -fx-opacity: 0;      /* Set opacity to 0 to hide it */
+}
+
+/* Hide horizontal scrollbar */
+.table-view .scroll-bar:horizontal {
+    -fx-pref-height: 0;  /* Set preferred height to 0 */
+    -fx-min-height: 0;   /* Set minimum height to 0 */
+    -fx-max-height: 0;   /* Set maximum height to 0 */
+    -fx-opacity: 0;       /* Set opacity to 0 to hide it */
+}
+
+/* Tooltip styling */
+.tooltip {
+    -fx-background-color: #333333; /* Dark background for tooltip */
+    -fx-text-fill: white; /* White text for tooltip */
+    -fx-padding: 5; /* Padding for tooltip */
+}
+
+/* Button styling */
+
+
+/* General TextField styling */
+.text-field {
+    -fx-pref-width: 300px; /* Set preferred width */
+    -fx-pref-height: 40px; /* Set preferred height */
+    -fx-padding: 5px; /* Inner padding */
+    -fx-font-size: 14px; /* Font size */
+    -fx-border-color: #cccccc; /* Border color */
+    -fx-border-radius: 5px; /* Rounded borders */
+    -fx-background-radius: 5px; /* Rounded background */
+    -fx-border-width: 1px; /* Border width */
+}
+
+/* Focus Effect for TextField */
+.text-field:focused {
+    -fx-border-color: #e80540; /* Border color on focus */
+    -fx-box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow effect */
+}
+
+/* Placeholder (Prompt Text) Styling */
+
+
+/* Text Styling Inside the Field */
+.text-field .text {
+    -fx-fill: #333333; /* Input text color */
+    -fx-font-weight: normal; /* Font weight */
+}
+
+/* Disabled TextField Styling */
+.text-field:disabled {
+    -fx-background-color: #f5f5f5; /* Background for disabled state */
+    -fx-border-color: #dddddd; /* Border color for disabled state */
+    -fx-text-fill: #999999; /* Text color for disabled state */
+}
+/* Rectangle styling */

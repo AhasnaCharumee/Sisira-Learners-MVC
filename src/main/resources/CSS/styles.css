@@ -1,0 +1,16 @@
+.button {
+    -fx-background-color: #3674B5; /* Yellow for primary buttons */
+    -fx-text-fill: #ffffff; /* Black text for contrast */
+    -fx-font-size: 14px; /* Readable font size */
+    -fx-font-weight: bold; /* Bold for emphasis */
+    -fx-padding: 10px 20px; /* Comfortable padding */
+    -fx-background-radius: 20px; /* Rounded corners */
+    -fx-border-color: #0000; /* Black border */
+    -fx-border-width: 2px;
+    -fx-border-radius: 20;
+}
+
+.pane {
+    background-color: #052459; /* Light Blue-Gray */
+
+}

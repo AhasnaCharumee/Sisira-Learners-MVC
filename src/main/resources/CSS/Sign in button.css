@@ -1,0 +1,23 @@
+button {
+    background-color: #4CAF50; /* Button eka wihidiyen green ranga */
+    border: none; /* Border eka naa */
+    color: white; /* Text eka sudu */
+    padding: 15px 32px; /* Button eka andura padding */
+    text-align: center; /* Text eka central align wenawa */
+    text-decoration: none; /* Text underline naa */
+    display: inline-block; /* Inline block widihata display */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Button eke spacing */
+    cursor: pointer; /* Hover wenama pointer icon eka */
+    border-radius: 8px; /* Button eka round border ekak thiyenawa */
+    transition: background-color 0.3s ease; /* Hover effect eken smooth transition */
+}
+
+button:hover {
+    background-color: #45a049; /* Hover kalaama color eka wenas wenawa */
+}
+
+button:active {
+    background-color: #3e8e41; /* Button eka press karana welawata color eka change wenawa */
+    transform: scale(0.98); /* Button eka press karana welawata thadawee karanawa */
+}

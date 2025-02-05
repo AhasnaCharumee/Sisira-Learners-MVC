@@ -1,6 +1,7 @@
 module lk.ijse.gdse72.sisiralearners {
     requires javafx.controls;
     requires javafx.fxml;
+    requires com.jfoenix;
 
 
     opens lk.ijse.gdse72.sisiralearners to javafx.fxml;
