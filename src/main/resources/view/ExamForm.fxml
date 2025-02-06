@@ -25,22 +25,13 @@
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnSave" layoutX="996.0" layoutY="19.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="38.0" prefWidth="141.0" text="ADD NEW">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/icons/icons8-add-60.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                </children>
             </Pane>
          </top>
          <center>
             <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <TableView fx:id="tblExam" layoutX="38.0" layoutY="130.0" prefHeight="362.0" prefWidth="1097.0">
+                  <TableView fx:id="tblExam" layoutX="38.0" layoutY="130.0" onMouseClicked="#tblExamOnClicked" prefHeight="362.0" prefWidth="1097.0">
                      <columns>
                         <TableColumn fx:id="colExamId" minWidth="0.0" prefWidth="107.0" text="Exam ID" />
                         <TableColumn fx:id="colExamName" prefWidth="246.0" text="EXAM NAME" />
@@ -49,18 +40,27 @@
                         <TableColumn fx:id="colResult" minWidth="0.0" prefWidth="197.0" text="RESULT" />
                      </columns>
                   </TableView>
-                  <JFXComboBox fx:id="cmbResult" labelFloat="true" layoutX="847.0" layoutY="32.0" onAction="#cmbResultOnAction" prefHeight="26.0" prefWidth="130.0" promptText="Result" />
-                  <JFXTextField fx:id="txtExamName" layoutX="208.0" layoutY="34.0" prefHeight="26.0" prefWidth="163.0" promptText="Exam Name" />
+                  <JFXComboBox fx:id="cmbResult" labelFloat="true" layoutX="847.0" layoutY="32.0" prefHeight="26.0" prefWidth="130.0" promptText="Result" />
+                  <JFXTextField fx:id="txtExamName" labelFloat="true" layoutX="208.0" layoutY="34.0" prefHeight="26.0" prefWidth="163.0" promptText="Exam Name" />
                   <Button fx:id="btnDelete" layoutX="885.0" layoutY="82.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="34.0" prefWidth="102.0" text="Delete" />
-                  <Button fx:id="btnUpdate" layoutX="1018.0" layoutY="82.0" mnemonicParsing="false" onAction="#btnUpadateOnAction" prefHeight="34.0" prefWidth="111.0" text="Update" />
+                  <Button fx:id="btnUpdate" layoutX="1018.0" layoutY="82.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="34.0" prefWidth="111.0" text="Update" />
                   <DatePicker fx:id="DatePickerExamDate" layoutX="609.0" layoutY="33.0" prefHeight="27.0" prefWidth="183.0" promptText="Exam Date" />
-                  <JFXComboBox layoutX="403.0" layoutY="34.0" prefHeight="26.0" prefWidth="173.0" promptText="Student Name" />
-                  <JFXTextField fx:id="txtExamName1" layoutX="38.0" layoutY="34.0" prefHeight="26.0" prefWidth="103.0" promptText="Exam ID" />
-                  <ImageView fx:id="btnReset" fitHeight="42.0" fitWidth="44.0" layoutX="1010.0" layoutY="24.0" onMouseClicked="#btnResetOnAction" pickOnBounds="true" preserveRatio="true">
+                  <JFXComboBox fx:id="cmbStudentNames" labelFloat="true" layoutX="403.0" layoutY="34.0" prefHeight="26.0" prefWidth="173.0" promptText="Student Name" />
+                  <JFXTextField fx:id="txtExamId" editable="false" labelFloat="true" layoutX="38.0" layoutY="34.0" prefHeight="26.0" prefWidth="103.0" promptText="Exam ID" />
+                  <ImageView fx:id="btnReset" fitHeight="42.0" fitWidth="44.0" layoutX="802.0" layoutY="78.0" onMouseClicked="#btnResetOnAction" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/icons/icons8-reset-90.png" />
                      </image>
                   </ImageView>
+                  <Button fx:id="btnSave" layoutX="1039.0" layoutY="26.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="38.0" prefWidth="90.0" text="ADD">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/icons8-add-60.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </Pane>
          </center>

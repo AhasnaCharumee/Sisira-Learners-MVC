@@ -24,22 +24,13 @@
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnSave" layoutX="996.0" layoutY="19.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="38.0" prefWidth="141.0" text="ADD NEW">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/icons/icons8-add-60.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                </children>
             </Pane>
          </top>
          <center>
             <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <TableView fx:id="tblSession" layoutX="38.0" layoutY="130.0" prefHeight="362.0" prefWidth="1097.0">
+                  <TableView fx:id="tblSession" layoutX="38.0" layoutY="130.0" onMouseClicked="#tblSessionOnClick" prefHeight="362.0" prefWidth="1097.0">
                      <columns>
                         <TableColumn fx:id="colSessionId" prefWidth="122.0" text="SESSION ID" />
                         <TableColumn fx:id="colInstructor" prefWidth="221.0" text="INSTRUCTOR NAME" />
@@ -49,19 +40,28 @@
                         <TableColumn fx:id="colEnadTime" prefWidth="170.0" text="END TIME" />
                      </columns>
                   </TableView>
-                  <JFXComboBox fx:id="cmbDay" labelFloat="true" layoutX="522.0" layoutY="28.0" onAction="#cmbDayOnAction" prefHeight="26.0" prefWidth="130.0" promptText="Day" />
-                  <JFXTextField fx:id="txtSessionId" layoutX="38.0" layoutY="28.0" prefHeight="26.0" prefWidth="94.0" promptText="Session ID" />
-                  <JFXTextField fx:id="txtStartTime" layoutX="690.0" layoutY="28.0" prefHeight="26.0" prefWidth="131.0" promptText="Engine Number" text="Start Time" />
+                  <JFXComboBox fx:id="cmbDay" labelFloat="true" layoutX="522.0" layoutY="28.0" prefHeight="26.0" prefWidth="130.0" promptText="Day" />
+                  <JFXTextField fx:id="txtSessionId" editable="false" labelFloat="true" layoutX="38.0" layoutY="28.0" prefHeight="26.0" prefWidth="94.0" promptText="Session ID" />
+                  <JFXTextField fx:id="txtStartTime" labelFloat="true" layoutX="690.0" layoutY="28.0" prefHeight="26.0" prefWidth="131.0" promptText="Start Time" />
                   <Button fx:id="btnDelete" layoutX="890.0" layoutY="82.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="34.0" prefWidth="102.0" text="Delete" />
                   <Button fx:id="btnUpdate" layoutX="1023.0" layoutY="82.0" mnemonicParsing="false" onAction="#btnUpadateOnAction" prefHeight="34.0" prefWidth="111.0" text="Update" />
-                  <JFXTextField fx:id="txtEndTime" layoutX="861.0" layoutY="28.0" prefHeight="26.0" prefWidth="128.0" promptText="Engine Number" text="End Time" />
-                  <JFXComboBox fx:id="cmbInstructorNames" layoutX="176.0" layoutY="28.0" prefHeight="26.0" prefWidth="128.0" promptText="Instructor" />
-                  <JFXComboBox fx:id="cmbVehicleName" layoutX="337.0" layoutY="28.0" prefHeight="26.0" prefWidth="128.0" promptText="Vehicle" />
-                  <ImageView fx:id="btnReset" fitHeight="42.0" fitWidth="44.0" layoutX="1017.0" layoutY="20.0" onMouseClicked="#btnResetOnAction" pickOnBounds="true" preserveRatio="true">
+                  <JFXTextField fx:id="txtEndTime" labelFloat="true" layoutX="861.0" layoutY="28.0" prefHeight="26.0" prefWidth="128.0" promptText="End Time" />
+                  <JFXComboBox fx:id="cmbInstructorNames" labelFloat="true" layoutX="176.0" layoutY="28.0" prefHeight="26.0" prefWidth="128.0" promptText="Instructor" />
+                  <JFXComboBox fx:id="cmbVehicleName" labelFloat="true" layoutX="337.0" layoutY="28.0" prefHeight="26.0" prefWidth="128.0" promptText="Vehicle" />
+                  <ImageView fx:id="btnReset" fitHeight="42.0" fitWidth="44.0" layoutX="812.0" layoutY="78.0" onMouseClicked="#btnResetOnAction" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/icons/icons8-reset-90.png" />
                      </image>
                   </ImageView>
+                  <Button fx:id="btnSave" layoutX="1034.0" layoutY="21.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="38.0" prefWidth="96.0" text="ADD">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/icons8-add-60.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </Pane>
          </center>
