@@ -3,8 +3,6 @@ package lk.ijse.gdse72.sisiralearners.model;
 import lk.ijse.gdse72.sisiralearners.dto.VehicleDto;
 import lk.ijse.gdse72.sisiralearners.util.SQLUtil;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -33,7 +31,7 @@ public class VehicleModel {
     }
 
     public boolean saveVehicle(VehicleDto vehicleDto) throws SQLException {
-        return SQLUtil.execute("INSERT INTO Vehicle VALUES (?,?,?,?,?)",
+        return SQLUtil.execute("INSERT INTO Vehicle VALUES (?,?,?,?,?,?)",
                 vehicleDto.getVehicle_id(),
                 vehicleDto.getVehicle_name(),
                 vehicleDto.getVehicle_number(),
@@ -43,13 +41,13 @@ public class VehicleModel {
         );
     }
     public boolean updateVehicle(VehicleDto vehicleDto) throws SQLException {
-        return SQLUtil.execute("UPDATE Vehicle SET vehicle_number=?, engine_number=?, vehicle_class=?, status=? WHERE vehicle_id=?",
-                vehicleDto.getVehicle_id(),
+        return SQLUtil.execute("UPDATE Vehicle SET vehicle_name=?, vehicle_number=?, engine_number=?, vehicle_class=?, status=? WHERE vehicle_id=?",
                 vehicleDto.getVehicle_name(),
                 vehicleDto.getVehicle_number(),
                 vehicleDto.getEngine_number(),
                 vehicleDto.getVehicle_class(),
-                vehicleDto.getStatus()
+                vehicleDto.getStatus(),
+                vehicleDto.getVehicle_id()
         );
     }
 

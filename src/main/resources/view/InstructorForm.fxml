@@ -24,7 +24,34 @@
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnSave" layoutX="996.0" layoutY="19.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="38.0" prefWidth="141.0" text="ADD NEW">
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="tblInstructor" layoutX="38.0" layoutY="130.0" onMouseClicked="#tblInstructorOnClick" prefHeight="362.0" prefWidth="1097.0">
+                     <columns>
+                        <TableColumn fx:id="colInstructorID" minWidth="0.0" prefWidth="120.0" text="ID" />
+                        <TableColumn fx:id="colName" prefWidth="237.0" text="NAME" />
+                        <TableColumn fx:id="colEmail" minWidth="0.0" prefWidth="290.0" text="EMAIL" />
+                        <TableColumn fx:id="colContact" prefWidth="280.0" text="CONTACT" />
+                        <TableColumn fx:id="colVehicleClass" minWidth="0.0" prefWidth="168.0" text="VEHICLE CLASS" />
+                     </columns>
+                  </TableView>
+                  <JFXTextField fx:id="txtInstructorEmail" labelFloat="true" layoutX="530.0" layoutY="28.0" prefHeight="26.0" prefWidth="228.0" promptText="Email" />
+                  <JFXTextField fx:id="txtContact" layoutX="788.0" layoutY="28.0" prefHeight="26.0" prefWidth="144.0" promptText="Contact" />
+                  <Button fx:id="btnDelete" layoutX="887.0" layoutY="82.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="34.0" prefWidth="102.0" text="Delete" />
+                  <Button fx:id="btnUpdate" layoutX="1020.0" layoutY="82.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="34.0" prefWidth="111.0" text="Update" />
+                  <JFXTextField fx:id="txtInstructorName" labelFloat="true" layoutX="159.0" layoutY="28.0" prefHeight="26.0" prefWidth="169.0" promptText="Name" />
+                  <JFXTextField fx:id="txtInstructorId" editable="false" labelFloat="true" layoutX="38.0" layoutY="28.0" prefHeight="26.0" prefWidth="85.0" promptText="ID" />
+                  <JFXComboBox fx:id="cmbVehicleClass" labelFloat="true" layoutX="371.0" layoutY="28.0" prefHeight="26.0" prefWidth="123.0" promptText="Vehicle Class" />
+                  <ImageView fx:id="btnReset" fitHeight="42.0" fitWidth="44.0" layoutX="804.0" layoutY="78.0" onMouseClicked="#btnResetOnAction" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/icons8-reset-90.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnSave" layoutX="1023.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="38.0" prefWidth="113.0" text="ADD">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -33,33 +60,6 @@
                         </ImageView>
                      </graphic>
                   </Button>
-               </children>
-            </Pane>
-         </top>
-         <center>
-            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <TableView fx:id="tblInstructor" layoutX="38.0" layoutY="130.0" prefHeight="362.0" prefWidth="1097.0">
-                     <columns>
-                        <TableColumn fx:id="colVehicleId" minWidth="0.0" prefWidth="120.0" text="VEHICLE ID" />
-                        <TableColumn fx:id="colName" prefWidth="237.0" text="NAME" />
-                        <TableColumn fx:id="colEmail" minWidth="0.0" prefWidth="290.0" text="EMAIL" />
-                        <TableColumn fx:id="colContact" prefWidth="280.0" text="CONTACT" />
-                        <TableColumn fx:id="colVehicleClass" minWidth="0.0" prefWidth="168.0" text="VEHICLE CLASS" />
-                     </columns>
-                  </TableView>
-                  <JFXTextField fx:id="txtInstructorEmail" layoutX="530.0" layoutY="28.0" prefHeight="26.0" prefWidth="228.0" promptText="Vehicle Number" text="Email" />
-                  <JFXTextField fx:id="txtContact" layoutX="788.0" layoutY="28.0" prefHeight="26.0" prefWidth="144.0" promptText="Name" text="Contact" />
-                  <Button fx:id="btnDelete" layoutX="887.0" layoutY="82.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="34.0" prefWidth="102.0" text="Delete" />
-                  <Button fx:id="btnUpdate" layoutX="1020.0" layoutY="82.0" mnemonicParsing="false" onAction="#btnUpadateOnAction" prefHeight="34.0" prefWidth="111.0" text="Update" />
-                  <JFXTextField fx:id="txtInstructorName" layoutX="159.0" layoutY="28.0" prefHeight="26.0" prefWidth="169.0" promptText="Vehicle Number" text="Name" />
-                  <JFXTextField fx:id="txtInstructorId" layoutX="38.0" layoutY="28.0" prefHeight="26.0" prefWidth="85.0" promptText="ID" />
-                  <JFXComboBox layoutX="371.0" layoutY="28.0" prefHeight="26.0" prefWidth="123.0" promptText="Vehicle Class" />
-                  <ImageView fx:id="btnReset" fitHeight="42.0" fitWidth="44.0" layoutX="957.0" layoutY="20.0" onMouseClicked="#btnResetOnAction" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/icons/icons8-reset-90.png" />
-                     </image>
-                  </ImageView>
                </children>
             </Pane>
          </center>

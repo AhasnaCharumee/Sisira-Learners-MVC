@@ -24,15 +24,6 @@
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnSave" layoutX="996.0" layoutY="19.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="38.0" prefWidth="141.0" text="ADD NEW">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/icons/icons8-add-60.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                </children>
             </Pane>
          </top>
@@ -49,19 +40,31 @@
                         <TableColumn fx:id="colClass" prefWidth="132.0" text="CLASS" />
                     </columns>
                   </TableView>
-                  <JFXComboBox fx:id="cmbStatus" labelFloat="true" layoutX="169.0" layoutY="27.0" onAction="#cmbStatusOnAction" prefHeight="26.0" prefWidth="113.0" promptText="Select Status" />
-                  <JFXTextField fx:id="txtVehicleNumber" layoutX="490.0" layoutY="27.0" prefHeight="26.0" prefWidth="132.0" promptText="Vehicle Number" />
-                  <JFXTextField fx:id="txtName" layoutX="326.0" layoutY="27.0" prefHeight="26.0" prefWidth="115.0" promptText="Name" />
-                  <JFXTextField fx:id="txtEngineNumber" layoutX="810.0" layoutY="27.0" prefHeight="26.0" prefWidth="146.0" promptText="Engine Number" />
+                  <JFXComboBox fx:id="cmbStatus" labelFloat="true" layoutX="143.0" layoutY="27.0" prefHeight="26.0" prefWidth="202.0" promptText="Select Status" />
+                  <JFXTextField fx:id="txtVehicleNumber" labelFloat="true" layoutX="564.0" layoutY="27.0" prefHeight="26.0" prefWidth="113.0" promptText="Vehicle Number" />
+                  <JFXTextField fx:id="txtName" labelFloat="true" layoutX="381.0" layoutY="27.0" prefHeight="26.0" prefWidth="150.0" promptText="Name" />
+                  <JFXTextField fx:id="txtEngineNumber" labelFloat="true" layoutX="850.0" layoutY="27.0" prefHeight="26.0" prefWidth="146.0" promptText="Engine Number" />
                   <Button fx:id="btnDelete" layoutX="883.0" layoutY="80.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="34.0" prefWidth="102.0" text="Delete" />
-                  <Button fx:id="btnUpdate" layoutX="1019.0" layoutY="80.0" mnemonicParsing="false" onAction="#btnUpadateOnAction" prefHeight="34.0" prefWidth="111.0" text="Update" />
-                  <JFXComboBox fx:id="cmbVehicleClass" labelFloat="true" layoutX="661.0" layoutY="27.0" onAction="#cmbStatusOnAction" prefHeight="26.0" prefWidth="106.0" promptText="Select Class" />
-                  <ImageView fx:id="btnReset" fitHeight="42.0" fitWidth="44.0" layoutX="992.0" layoutY="19.0" onMouseClicked="#btnResetOnAction" pickOnBounds="true" preserveRatio="true">
+                  <Button fx:id="btnUpdate" layoutX="1019.0" layoutY="80.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="34.0" prefWidth="111.0" text="Update" />
+                  <JFXComboBox fx:id="cmbVehicleClass" labelFloat="true" layoutX="717.0" layoutY="27.0" prefHeight="26.0" prefWidth="109.0" promptText="Select Class" />
+                  <ImageView fx:id="btnReset" fitHeight="42.0" fitWidth="44.0" layoutX="805.0" layoutY="76.0" onMouseClicked="#btnResetOnAction" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/icons/icons8-reset-90.png" />
                      </image>
                   </ImageView>
-                  <JFXTextField fx:id="txtID" layoutX="45.0" layoutY="27.0" prefHeight="26.0" prefWidth="90.0" promptText="Name" text="ID" />
+                  <JFXTextField fx:id="txtID" editable="false" labelFloat="true" layoutX="45.0" layoutY="27.0" prefHeight="26.0" prefWidth="81.0" promptText="ID" />
+                  <Button fx:id="btnSave" layoutX="1028.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="29.0" prefWidth="100.0" text="ADD" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/icons8-add-60.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </Pane>
          </center>

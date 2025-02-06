@@ -88,8 +88,8 @@ public class VehicleFormController implements Initializable {
             txtName.setText(selectedItem.getVehicle_name());
             txtVehicleNumber.setText(selectedItem.getVehicle_number());
             txtEngineNumber.setText(selectedItem.getEngine_number());
-            cmbVehicleClass.setValue(selectedItem.getVehicle_class());
-            cmbStatus.setValue(selectedItem.getStatus());
+            cmbVehicleClass.getSelectionModel().select(selectedItem.getVehicle_class());
+            cmbStatus.getSelectionModel().select(selectedItem.getStatus());
 
             btnSave.setDisable(true);
             btnDelete.setDisable(false);
@@ -97,14 +97,13 @@ public class VehicleFormController implements Initializable {
         }
     }
 
-
     @FXML
     void btnSaveOnAction(ActionEvent event) {
         String vehicleId = txtID.getText();
         String name = txtName.getText();
         String vehicleNumber = txtVehicleNumber.getText();
         String engineNumber = txtEngineNumber.getText();
-        String vehicleClass =cmbVehicleClass.getValue();
+        String vehicleClass = cmbVehicleClass.getValue();
         String status = cmbStatus.getValue();
 
         VehicleDto vehicleDto = new VehicleDto(vehicleId, name, vehicleNumber, engineNumber, vehicleClass, status);
@@ -121,16 +120,15 @@ public class VehicleFormController implements Initializable {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "An error occurred while saving the vehicle: " + e.getMessage()).show();
         }
-
     }
 
     @FXML
-    void btnUpadateOnAction(ActionEvent event) throws SQLException {
+    void btnUpdateOnAction(ActionEvent event) throws SQLException {
         String vehicleId = txtID.getText();
         String name = txtName.getText();
         String vehicleNumber = txtVehicleNumber.getText();
         String engineNumber = txtEngineNumber.getText();
-        String vehicleClass =cmbVehicleClass.getValue();
+        String vehicleClass = cmbVehicleClass.getValue();
         String status = cmbStatus.getValue();
 
         VehicleDto vehicleDto = new VehicleDto(vehicleId, name, vehicleNumber, engineNumber, vehicleClass, status);
@@ -142,7 +140,6 @@ public class VehicleFormController implements Initializable {
         } else {
             new Alert(Alert.AlertType.ERROR, "Failed to update vehicle!").show();
         }
-
     }
 
     @FXML
@@ -164,17 +161,11 @@ public class VehicleFormController implements Initializable {
                 throw new RuntimeException(e);
             }
         }
-
     }
 
     @FXML
     void btnResetOnAction(MouseEvent event) throws SQLException {
         refreshPage();
-    }
-
-    @FXML
-    void cmbStatusOnAction(ActionEvent event) {
-
     }
 
     @Override
@@ -204,8 +195,10 @@ public class VehicleFormController implements Initializable {
         txtName.setText("");
         txtVehicleNumber.setText("");
         txtEngineNumber.setText("");
-        cmbVehicleClass.setItems(null);
-        cmbStatus.setItems(null);
+        cmbVehicleClass.getSelectionModel().clearSelection();
+        cmbStatus.getSelectionModel().clearSelection();
+        loadVehicleClass();
+        loadStatus();
 
         btnSave.setDisable(false);
         btnDelete.setDisable(true);
@@ -239,7 +232,4 @@ public class VehicleFormController implements Initializable {
         ObservableList<String> Vclass = FXCollections.observableArrayList("A", "B", "A1", "B", "B1", "B2", "C", "C1", "C2", "G1", "D1", "J", "H");
         cmbVehicleClass.setItems(Vclass);
     }
-
-
-
 }
