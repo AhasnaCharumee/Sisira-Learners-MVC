@@ -14,7 +14,7 @@
          <left>
             <AnchorPane fx:id="navpanel" prefHeight="589.0" prefWidth="73.0" BorderPane.alignment="CENTER">
                <children>
-                  <VBox layoutX="5.0" layoutY="75.0" prefHeight="470.0" prefWidth="63.0" spacing="12.0" style="-fx-background-color: #d4eaf7; -fx-border-radius: 30; -fx-background-radius: 30;">
+                  <VBox layoutX="5.0" layoutY="45.0" prefHeight="470.0" prefWidth="63.0" spacing="12.0" style="-fx-background-color: #d4eaf7; -fx-border-radius: 30; -fx-background-radius: 30;">
                      <children>
                         <ImageView fx:id="btndashboard" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#btndashboardOnAction" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -42,6 +42,11 @@
                         <ImageView fx:id="btnPayment" fitHeight="45.0" fitWidth="45.0" layoutX="10.0" layoutY="178.0" onMouseClicked="#btnPaymentOnAction" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/icons/icons8-payment-90.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="btnExam" fitHeight="45.0" fitWidth="45.0" layoutX="15.0" layoutY="243.0" onMouseClicked="#btnExamOnAction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/icons8-exam-90.png" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="btnSession" fitHeight="45.0" fitWidth="45.0" layoutX="10.0" layoutY="234.0" onMouseClicked="#btnSessionOnAction" pickOnBounds="true" preserveRatio="true">

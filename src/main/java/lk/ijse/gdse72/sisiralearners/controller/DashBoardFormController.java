@@ -53,17 +53,26 @@ public class DashBoardFormController {
     private AnchorPane navpanel;
 
     @FXML
+    private ImageView btnExam;
+
+    @FXML
     void btnBookingOnAction(MouseEvent event) {
 
     }
 
     @FXML
-    void btnCoursesOnAction(MouseEvent event) {
+    void btnCoursesOnAction(MouseEvent event) throws IOException {
+        homepage.getChildren().clear();
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/CourseForm.fxml"));
+        homepage.getChildren().add(anchorPane);
 
     }
 
     @FXML
-    void btnInstructorOnAction(MouseEvent event) {
+    void btnInstructorOnAction(MouseEvent event) throws IOException {
+        homepage.getChildren().clear();
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/InstructorForm.fxml"));
+        homepage.getChildren().add(anchorPane);
 
     }
 
@@ -86,7 +95,10 @@ public class DashBoardFormController {
     }
 
     @FXML
-    void btnSessionOnAction(MouseEvent event) {
+    void btnSessionOnAction(MouseEvent event) throws IOException {
+        homepage.getChildren().clear();
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/SessionForm.fxml"));
+        homepage.getChildren().add(anchorPane);
 
     }
 
@@ -107,6 +119,14 @@ public class DashBoardFormController {
     void btnVehicleOnAction(MouseEvent event) throws IOException {
         homepage.getChildren().clear();
         AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/VehicleForm.fxml"));
+        homepage.getChildren().add(anchorPane);
+
+    }
+
+    @FXML
+    void btnExamOnAction(MouseEvent event) throws IOException {
+        homepage.getChildren().clear();
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/ExamForm.fxml"));
         homepage.getChildren().add(anchorPane);
 
     }

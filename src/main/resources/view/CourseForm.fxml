@@ -13,13 +13,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="paneVehicle" prefHeight="612.0" prefWidth="1172.0" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse72.sisiralearners.controller.VehicleFormController">
+<AnchorPane fx:id="paneCourse" prefHeight="612.0" prefWidth="1172.0" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse72.sisiralearners.controller.CourseFormController">
    <children>
       <BorderPane prefHeight="612.0" prefWidth="1172.0">
          <top>
             <Pane prefHeight="75.0" prefWidth="1172.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="35.0" layoutY="27.0" prefHeight="24.0" prefWidth="185.0" text="Vehicle Management">
+                  <Label layoutX="35.0" layoutY="27.0" prefHeight="24.0" prefWidth="216.0" text="Courses Management">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
@@ -39,29 +39,27 @@
          <center>
             <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <TableView fx:id="tblVehicle" layoutX="38.0" layoutY="130.0" onMouseClicked="#tblVehicleOnClick" prefHeight="362.0" prefWidth="1097.0">
+                  <TableView fx:id="tblCourse" layoutX="38.0" layoutY="130.0" prefHeight="362.0" prefWidth="1097.0">
                     <columns>
-                        <TableColumn fx:id="colVehicleID" prefWidth="119.0" text="VEHICLE ID" />
-                      <TableColumn fx:id="colStatus" prefWidth="174.0" text="STATUS" />
-                      <TableColumn fx:id="colName" minWidth="0.0" prefWidth="269.0" text="NAME" />
-                        <TableColumn fx:id="colVNumber" prefWidth="207.0" text="VEHICLE NUMBER" />
-                        <TableColumn fx:id="colEngineNumber" minWidth="0.0" prefWidth="194.0" text="ENGINE NUMBER" />
-                        <TableColumn fx:id="colClass" prefWidth="132.0" text="CLASS" />
+                      <TableColumn fx:id="colID" prefWidth="162.0" text="COURSE ID" />
+                      <TableColumn fx:id="colStatus" minWidth="0.0" prefWidth="177.0" text="STATUS" />
+                        <TableColumn fx:id="colName" prefWidth="365.0" text="NAME" />
+                        <TableColumn fx:id="colDuration" minWidth="0.0" prefWidth="198.0" text="DURATION" />
+                        <TableColumn fx:id="colPrice" prefWidth="194.0" text="Price" />
                     </columns>
                   </TableView>
-                  <JFXComboBox fx:id="cmbStatus" labelFloat="true" layoutX="169.0" layoutY="27.0" onAction="#cmbStatusOnAction" prefHeight="26.0" prefWidth="113.0" promptText="Select Status" />
-                  <JFXTextField fx:id="txtVehicleNumber" layoutX="490.0" layoutY="27.0" prefHeight="26.0" prefWidth="132.0" promptText="Vehicle Number" />
-                  <JFXTextField fx:id="txtName" layoutX="326.0" layoutY="27.0" prefHeight="26.0" prefWidth="115.0" promptText="Name" />
-                  <JFXTextField fx:id="txtEngineNumber" layoutX="810.0" layoutY="27.0" prefHeight="26.0" prefWidth="146.0" promptText="Engine Number" />
+                  <JFXTextField fx:id="txtName" layoutX="357.0" layoutY="27.0" prefHeight="26.0" prefWidth="195.0" promptText="Name" />
+                  <JFXTextField fx:id="txtDuration" layoutX="603.0" layoutY="27.0" prefHeight="26.0" prefWidth="154.0" promptText="Duration" />
+                  <JFXTextField fx:id="txtPrice" layoutX="791.0" layoutY="27.0" prefHeight="26.0" prefWidth="158.0" promptText="Engine Number" text="Price" />
                   <Button fx:id="btnDelete" layoutX="883.0" layoutY="80.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="34.0" prefWidth="102.0" text="Delete" />
                   <Button fx:id="btnUpdate" layoutX="1019.0" layoutY="80.0" mnemonicParsing="false" onAction="#btnUpadateOnAction" prefHeight="34.0" prefWidth="111.0" text="Update" />
-                  <JFXComboBox fx:id="cmbVehicleClass" labelFloat="true" layoutX="661.0" layoutY="27.0" onAction="#cmbStatusOnAction" prefHeight="26.0" prefWidth="106.0" promptText="Select Class" />
-                  <ImageView fx:id="btnReset" fitHeight="42.0" fitWidth="44.0" layoutX="992.0" layoutY="19.0" onMouseClicked="#btnResetOnAction" pickOnBounds="true" preserveRatio="true">
+                  <JFXComboBox fx:id="cmbStatus" labelFloat="true" layoutX="185.0" layoutY="27.0" onAction="#cmbStatusOnAction" prefHeight="26.0" prefWidth="130.0" promptText="Select Status" />
+                  <ImageView fx:id="btnReset" fitHeight="42.0" fitWidth="44.0" layoutX="980.0" layoutY="19.0" onMouseClicked="#btnResetOnAction" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/icons/icons8-reset-90.png" />
                      </image>
                   </ImageView>
-                  <JFXTextField fx:id="txtID" layoutX="45.0" layoutY="27.0" prefHeight="26.0" prefWidth="90.0" promptText="Name" text="ID" />
+                  <JFXTextField fx:id="txtCourseId" layoutX="42.0" layoutY="27.0" prefHeight="26.0" prefWidth="96.0" promptText="ID" />
                </children>
             </Pane>
          </center>
