@@ -1,19 +1,47 @@
 package lk.ijse.gdse72.sisiralearners.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.io.IOException;
 
 public class DashBoardFormController {
 
     @FXML
-    private Button btnStudent;
+    private ImageView btnBooking;
+
+    @FXML
+    private ImageView btnCourses;
+
+    @FXML
+    private ImageView btnInstructor;
+
+    @FXML
+    private ImageView btnLogOt;
+
+    @FXML
+    private ImageView btnPayment;
+
+    @FXML
+    private ImageView btnSession;
+
+    @FXML
+    private ImageView btnStudent;
+
+    @FXML
+    private ImageView btnUsersettigs;
+
+    @FXML
+    private ImageView btnVehicle;
+
+    @FXML
+    private ImageView btndashboard;
 
     @FXML
     private AnchorPane dashBoardpane;
@@ -22,17 +50,69 @@ public class DashBoardFormController {
     private AnchorPane homepage;
 
     @FXML
-    private ImageView userbtn;
+    private AnchorPane navpanel;
 
     @FXML
-    void btnStudentOnAction(ActionEvent event) throws IOException {
-        homepage.getChildren().clear();
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/StudentForm.fxml"));
-        homepage.getChildren().add(anchorPane);
+    void btnBookingOnAction(MouseEvent event) {
+
     }
 
     @FXML
-    void userbtnOnAction(MouseEvent event) {
+    void btnCoursesOnAction(MouseEvent event) {
+
+    }
+
+    @FXML
+    void btnInstructorOnAction(MouseEvent event) {
+
+    }
+
+    @FXML
+    void btnLogOtOnAction(MouseEvent event) throws IOException {
+        Window window = dashBoardpane.getScene().getWindow();
+        window.hide();
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/LoginForm.fxml"));
+        Stage stage = new Stage();
+        stage.setMaximized(true);
+        stage.setTitle("Sisira Learners");
+        stage.setScene(new Scene(anchorPane));
+        stage.show();
+
+    }
+
+    @FXML
+    void btnPaymentOnAction(MouseEvent event) {
+
+    }
+
+    @FXML
+    void btnSessionOnAction(MouseEvent event) {
+
+    }
+
+    @FXML
+    void btnStudentOnAction(MouseEvent event) throws IOException {
+        homepage.getChildren().clear();
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/StudentForm.fxml"));
+        homepage.getChildren().add(anchorPane);
+
+    }
+
+    @FXML
+    void btnUsersettigsOnAction(MouseEvent event) {
+
+    }
+
+    @FXML
+    void btnVehicleOnAction(MouseEvent event) throws IOException {
+        homepage.getChildren().clear();
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/VehicleForm.fxml"));
+        homepage.getChildren().add(anchorPane);
+
+    }
+
+    @FXML
+    void btndashboardOnAction(MouseEvent event) {
 
     }
 

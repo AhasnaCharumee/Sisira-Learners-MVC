@@ -5,9 +5,12 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.io.IOException;
 
@@ -33,9 +36,14 @@ public class LoginFormController {
 
     @FXML
     void signInbtnOnAction(ActionEvent event) throws IOException {
-        loginpane.getChildren().clear();
+        Window window = loginpane.getScene().getWindow();
+        window.hide();
         AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/DashBoardForm.fxml"));
-        loginpane.getChildren().add(anchorPane);
+        Stage stage = new Stage();
+        stage.setMaximized(true);
+        stage.setTitle("Sisira Learners");
+        stage.setScene(new Scene(anchorPane));
+        stage.show();
     }
 
 }
