@@ -20,7 +20,8 @@ public class StudentModel {
                     rst.getString(2),
                     rst.getString(3),
                     rst.getString(4),
-                    rst.getString(5)
+                    rst.getString(5),
+                    rst.getDouble(6)
             );
             studentDtos.add(studentDto);
         }
@@ -29,12 +30,13 @@ public class StudentModel {
     }
 
     public boolean saveStudent(StudentDto studentDto) throws SQLException {
-        return SQLUtil.execute("INSERT INTO Student VALUES (?,?,?,?,?)",
+        return SQLUtil.execute("INSERT INTO Student VALUES (?,?,?,?,?,?)",
                 studentDto.getStudent_id(),
                 studentDto.getName(),
                 studentDto.getEmail(),
                 studentDto.getNic(),
-                studentDto.getContact()
+                studentDto.getContact(),
+                studentDto.getPay_balance()
         );
     }
 
@@ -44,7 +46,9 @@ public class StudentModel {
                 studentDto.getEmail(),
                 studentDto.getNic(),
                 studentDto.getContact(),
-                studentDto.getStudent_id()
+                studentDto.getStudent_id(),
+                studentDto.getPay_balance()
+
         );
     }
 
@@ -77,5 +81,13 @@ public class StudentModel {
             studentNames.add(resultSet.getString("name"));
         }
         return studentNames;
+    }
+
+    public String getStudentId(String studentName) throws SQLException {
+        ResultSet resultSet = SQLUtil.execute("SELECT student_id FROM Student WHERE name=?", studentName);
+        if (resultSet.next()) {
+            return resultSet.getString("student_id");
+        }
+        return null;
     }
 }

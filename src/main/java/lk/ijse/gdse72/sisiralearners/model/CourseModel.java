@@ -28,6 +28,23 @@ public class CourseModel {
         return courseDtos;
     }
 
+    public List<String> getActiveCourses() throws SQLException {
+        List<String> courses = new ArrayList<>();
+        ResultSet resultSet = SQLUtil.execute("SELECT name FROM Course WHERE status = 'Active'");
+        while (resultSet.next()) {
+            courses.add(resultSet.getString("name"));
+        }
+        return courses;
+    }
+
+    public double getCourseFee(String courseName) throws SQLException {
+        ResultSet resultSet = SQLUtil.execute("SELECT price FROM Course WHERE name = ?", courseName);
+        if (resultSet.next()) {
+            return resultSet.getDouble("price");
+        }
+        return 0.0;
+    }
+
     public boolean saveCourse(CourseDto courseDto) throws SQLException {
         return SQLUtil.execute("INSERT INTO Course VALUES (?,?,?,?,?)",
                 courseDto.getCourse_id(),
@@ -77,5 +94,20 @@ public class CourseModel {
             courseIds.add(resultSet.getString("course_id"));
         }
         return courseIds;
+    }
+
+    public String getCourseId(String courseName) throws SQLException {
+        ResultSet resultSet = SQLUtil.execute("SELECT course_id FROM Course WHERE name = ?", courseName);
+        if (resultSet.next()) {
+            return resultSet.getString("course_id");
+        }
+        return null;
+    }
+    public String getCourseNameByStudentId(String studentId) throws SQLException {
+        ResultSet resultSet = SQLUtil.execute("SELECT c.name FROM Course c JOIN StudentRegistration sr ON c.course_id = sr.course_id WHERE sr.student_id = ?", studentId);
+        if (resultSet.next()) {
+            return resultSet.getString("name");
+        }
+        return null;
     }
 }

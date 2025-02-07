@@ -108,7 +108,7 @@ public class DashBoardFormController {
     @FXML
     void btnStudentOnAction(MouseEvent event) throws IOException {
         homepage.getChildren().clear();
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/StudentForm.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/StudentRegistrationForm.fxml"));
         homepage.getChildren().add(anchorPane);
 
     }

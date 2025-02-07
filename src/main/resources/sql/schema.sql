@@ -23,7 +23,8 @@ CREATE TABLE Student (
                          name VARCHAR(100) NOT NULL,
                          email VARCHAR(100),
                          nic VARCHAR(20),
-                         contact VARCHAR(15)
+                         contact VARCHAR(15),
+                         pay_balance DECIMAL(10,2)
 );
 
 CREATE TABLE StudentRegistration (
@@ -31,7 +32,7 @@ CREATE TABLE StudentRegistration (
                                      student_id VARCHAR(10),
                                      course_id VARCHAR(10),
                                      registration_date DATE NOT NULL,
-                                     pay_balance DECIMAL(10,2),
+                                     status VARCHAR(20),
                                      FOREIGN KEY (student_id) REFERENCES Student(student_id)
                                          ON DELETE CASCADE ON UPDATE CASCADE,
                                      FOREIGN KEY (course_id) REFERENCES Course(course_id)
@@ -114,19 +115,19 @@ INSERT INTO Course (course_id, status, name, duration, price) VALUES
                                                                   ('C004', 'Active', 'Motorcycle Training', 15, 400.00),
                                                                   ('C005', 'Active', 'Commercial Vehicle', 40, 1000.00);
 
-INSERT INTO Student (student_id, name, email, nic, contact) VALUES
-                                                                ('S001', 'Alice Johnson', 'alice.j@example.com', '123456789V', '0771234567'),
-                                                                ('S002', 'Bob Brown', 'bob.brown@example.com', '987654321V', '0772345678'),
-                                                                ('S003', 'Charlie Davis', 'charlie.d@example.com', '456789123V', '0773456789'),
-                                                                ('S004', 'Diana Evans', 'diana.e@example.com', '321654987V', '0774567890'),
-                                                                ('S005', 'Ethan Green', 'ethan.g@example.com', '654123987V', '0775678901');
+INSERT INTO Student (student_id, name, email, nic, contact, pay_balance) VALUES
+                                                                ('S001', 'Alice Johnson', 'alice.j@example.com', '123456789V', '0771234567',200.00),
+                                                                ('S002', 'Bob Brown', 'bob.brown@example.com', '987654321V', '0772345678',500.00),
+                                                                ('S003', 'Charlie Davis', 'charlie.d@example.com', '456789123V', '0773456789',150.00),
+                                                                ('S004', 'Diana Evans', 'diana.e@example.com', '321654987V', '0774567890',500.00),
+                                                                ('S005', 'Ethan Green', 'ethan.g@example.com', '654123987V', '0775678901',150.00);
 
-INSERT INTO StudentRegistration (registration_id, student_id, course_id, registration_date, pay_balance) VALUES
-                                                                                                             ('R001', 'S001', 'C001', '2023-10-01', 200.00),
-                                                                                                             ('R002', 'S002', 'C002', '2023-10-02', 300.00),
-                                                                                                             ('R003', 'S003', 'C003', '2023-10-03', 150.00),
-                                                                                                             ('R004', 'S004', 'C004', '2023-10-04', 100.00),
-                                                                                                             ('R005', 'S005', 'C005', '2023-10-05', 500.00);
+INSERT INTO StudentRegistration (registration_id, student_id, course_id, registration_date, status) VALUES
+                                                                                                             ('SR001', 'S001', 'C001', '2023-10-01','Active'),
+                                                                                                             ('SR002', 'S002', 'C002', '2023-10-02','Active'),
+                                                                                                             ('SR003', 'S003', 'C003', '2023-10-03','Inactive'),
+                                                                                                             ('SR004', 'S004', 'C004', '2023-10-04','Active'),
+                                                                                                             ('SR005', 'S005', 'C005', '2023-10-05','Active');
 
 INSERT INTO Payment (payment_id, student_id, note, amount, payment_date) VALUES
                                                                                               ('P001', 'S001', 'Initial Payment', 300.00, '2023-10-01'),

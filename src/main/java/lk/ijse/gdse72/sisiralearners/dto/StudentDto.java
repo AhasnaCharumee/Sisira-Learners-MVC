@@ -11,4 +11,5 @@ public class StudentDto {
     String email;
     String nic;
     String contact;
+    double pay_balance;
 }

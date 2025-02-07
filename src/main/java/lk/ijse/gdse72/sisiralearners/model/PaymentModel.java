@@ -80,4 +80,8 @@ public class PaymentModel {
         }
         return paymentIds;
     }
+
+    public boolean deletePaymentByRegistrationId(String studentId) throws SQLException {
+        return SQLUtil.execute("DELETE FROM Payment WHERE student_id=?", studentId);
+    }
 }
