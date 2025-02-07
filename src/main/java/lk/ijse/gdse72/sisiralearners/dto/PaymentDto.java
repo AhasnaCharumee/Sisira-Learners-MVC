@@ -1,11 +1,16 @@
 package lk.ijse.gdse72.sisiralearners.dto;
 
-import java.sql.Date;
-
+import java.util.Date;
+import lombok.*;
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 public class PaymentDto {
     String payment_id;
-    String registration_id;
     String student_id;
-    Double amount;
+    String note;
+    double amount;
     Date payment_date;
 }

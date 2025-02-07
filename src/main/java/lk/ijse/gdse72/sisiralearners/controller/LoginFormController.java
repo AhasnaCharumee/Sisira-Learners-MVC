@@ -40,7 +40,6 @@ public class LoginFormController {
         window.hide();
         AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/DashBoardForm.fxml"));
         Stage stage = new Stage();
-        stage.setMaximized(true);
         stage.setTitle("Sisira Learners");
         stage.setScene(new Scene(anchorPane));
         stage.show();

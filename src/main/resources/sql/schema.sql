@@ -40,13 +40,10 @@ CREATE TABLE StudentRegistration (
 
 CREATE TABLE Payment (
                          payment_id VARCHAR(10) PRIMARY KEY,
-                         registration_id VARCHAR(10),
                          student_id VARCHAR(10),
                          note VARCHAR(100),
                          amount DECIMAL(10,2) NOT NULL,
                          payment_date DATE NOT NULL,
-                         FOREIGN KEY (registration_id) REFERENCES StudentRegistration(registration_id)
-                             ON DELETE CASCADE ON UPDATE CASCADE,
                          FOREIGN KEY (student_id) REFERENCES Student(student_id)
                              ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -78,7 +75,7 @@ CREATE TABLE Vehicle (
                          status VARCHAR(100)
 );
 
-CREATE TABLE Sessions (
+CREATE TABLE Session (
                           session_id VARCHAR(10) PRIMARY KEY,
                           instructor_id VARCHAR(10),
                           vehicle_id VARCHAR(10),
@@ -99,7 +96,7 @@ CREATE TABLE Booking (
                          practise_session VARCHAR(100),
                          FOREIGN KEY (student_id) REFERENCES Student(student_id)
                              ON DELETE CASCADE ON UPDATE CASCADE,
-                         FOREIGN KEY (session_id) REFERENCES Sessions(session_id)
+                         FOREIGN KEY (session_id) REFERENCES Session(session_id)
                              ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -131,12 +128,12 @@ INSERT INTO StudentRegistration (registration_id, student_id, course_id, registr
                                                                                                              ('R004', 'S004', 'C004', '2023-10-04', 100.00),
                                                                                                              ('R005', 'S005', 'C005', '2023-10-05', 500.00);
 
-INSERT INTO Payment (payment_id, registration_id, student_id, note, amount, payment_date) VALUES
-                                                                                              ('P001', 'R001', 'S001', 'Initial Payment', 300.00, '2023-10-01'),
-                                                                                              ('P002', 'R002', 'S002', 'Course Fee', 400.00, '2023-10-02'),
-                                                                                              ('P003', 'R003', 'S003', 'Partial Payment', 200.00, '2023-10-03'),
-                                                                                              ('P004', 'R004', 'S004', 'Full Payment', 400.00, '2023-10-04'),
-                                                                                              ('P005', 'R005', 'S005', 'Initial Payment', 500.00, '2023-10-05');
+INSERT INTO Payment (payment_id, student_id, note, amount, payment_date) VALUES
+                                                                                              ('P001', 'S001', 'Initial Payment', 300.00, '2023-10-01'),
+                                                                                              ('P002', 'S002', 'Course Fee', 400.00, '2023-10-02'),
+                                                                                              ('P003', 'S003', 'Partial Payment', 200.00, '2023-10-03'),
+                                                                                              ('P004', 'S004', 'Full Payment', 400.00, '2023-10-04'),
+                                                                                              ('P005', 'S005', 'Initial Payment', 500.00, '2023-10-05');
 
 INSERT INTO Exam (exam_id, exam_name, student_id, exam_date, result) VALUES
                                                                          ('E001', 'Beginner Driving Test', 'S001', '2023-11-01', 'Pass'),
@@ -159,7 +156,7 @@ INSERT INTO Vehicle (vehicle_id, vehicle_name, vehicle_number, engine_number, ve
                                                                                                          ('V004', 'Toyota Hilux', 'JKL-1121', 'ENG123789', 'C', 'Under Maintenance'),
                                                                                                          ('V005', 'Mitsubishi Lancer', 'MNO-3141', 'ENG456123', 'B', 'Available');
 
-INSERT INTO Sessions (session_id, instructor_id, vehicle_id, day, start_time, end_time) VALUES
+INSERT INTO Session (session_id, instructor_id, vehicle_id, day, start_time, end_time) VALUES
                                                                                             ('SE001', 'I001', 'V001', 'Monday', '09:00', '11:00'),
                                                                                             ('SE002', 'I002', 'V003', 'Tuesday', '10:00', '12:00'),
                                                                                             ('SE003', 'I003', 'V004', 'Wednesday', '13:00', '15:00'),

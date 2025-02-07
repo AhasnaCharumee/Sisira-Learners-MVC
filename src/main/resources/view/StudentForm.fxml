@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="612.0" prefWidth="1172.0" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse72.sisiralearners.controller.StudentFormController">
+<AnchorPane prefHeight="612.0" prefWidth="1172.0" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse72.sisiralearners.controller.StudentFormController">
    <children>
       <BorderPane prefHeight="612.0" prefWidth="1172.0">
          <top>
@@ -30,24 +30,23 @@
          <center>
             <Pane prefHeight="487.0" prefWidth="1172.0" BorderPane.alignment="CENTER">
                <children>
-                  <JFXComboBox layoutX="26.0" layoutY="14.0" prefHeight="26.0" prefWidth="112.0" promptText="Status" />
-                  <JFXTextField layoutX="182.0" layoutY="14.0" prefHeight="26.0" prefWidth="119.0" promptText="Student Reg-ID" />
-                  <JFXTextField layoutX="351.0" layoutY="14.0" promptText="Name" />
-                  <JFXTextField layoutX="554.0" layoutY="14.0" promptText="NIC" />
-                  <JFXTextField layoutX="746.0" layoutY="14.0" promptText="Telephone" />
-                  <JFXTextField layoutX="944.0" layoutY="14.0" promptText="Phone No" text="Email" />
-                  <JFXComboBox layoutX="26.0" layoutY="61.0" prefHeight="26.0" prefWidth="148.0" promptText="Select Course" />
-                  <JFXTextField layoutX="212.0" layoutY="61.0" promptText="Initial Payment" />
+                  <JFXTextField fx:id="txtStudentRegId" layoutX="26.0" layoutY="14.0" prefHeight="26.0" prefWidth="119.0" promptText="Student Reg-ID" />
+                  <JFXTextField fx:id="txtName" layoutX="351.0" layoutY="14.0" promptText="Name" />
+                  <JFXTextField fx:id="txtNIC" layoutX="554.0" layoutY="14.0" promptText="NIC" />
+                  <JFXTextField fx:id="txtTelePhone" layoutX="746.0" layoutY="14.0" promptText="Telephone" />
+                  <JFXTextField fx:id="txtEmail" layoutX="944.0" layoutY="14.0" promptText="Phone No" text="Email" />
+                  <JFXComboBox fx:id="cmbCourse" layoutX="26.0" layoutY="61.0" prefHeight="26.0" prefWidth="148.0" promptText="Select Course" />
+                  <JFXTextField fx:id="txtInitialPayment" layoutX="212.0" layoutY="61.0" promptText="Initial Payment" />
                   <Button layoutX="471.0" layoutY="57.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" text="Register" />
                   <TableView fx:id="tblStudentRegistration" layoutX="26.0" layoutY="132.0" prefHeight="379.0" prefWidth="1112.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="STATUS" />
-                      <TableColumn prefWidth="115.0" text="REG_ID" />
-                        <TableColumn prefWidth="196.0" text="NAME" />
-                        <TableColumn prefWidth="178.0" text="NIC" />
-                        <TableColumn prefWidth="191.0" text="EMAIL" />
-                        <TableColumn prefWidth="193.0" text="TELEPHONE" />
-                        <TableColumn prefWidth="163.0" text="Pay_Balance" />
+                      <TableColumn fx:id="colStatus" prefWidth="75.0" text="STATUS" />
+                      <TableColumn fx:id="colReg" prefWidth="115.0" text="REG_ID" />
+                        <TableColumn fx:id="colName" prefWidth="196.0" text="NAME" />
+                        <TableColumn fx:id="colNic" prefWidth="178.0" text="NIC" />
+                        <TableColumn fx:id="colEmail" prefWidth="191.0" text="EMAIL" />
+                        <TableColumn fx:id="colTelephone" prefWidth="193.0" text="TELEPHONE" />
+                        <TableColumn fx:id="colBalance" prefWidth="163.0" text="Pay_Balance" />
                     </columns>
                   </TableView>
                   <ImageView fx:id="btnReset" fitHeight="42.0" fitWidth="44.0" layoutX="391.0" layoutY="53.0" onMouseClicked="#btnResetOnAction" pickOnBounds="true" preserveRatio="true">
@@ -55,6 +54,7 @@
                         <Image url="@../assets/icons/icons8-reset-90.png" />
                      </image>
                   </ImageView>
+                  <JFXComboBox fx:id="cmbStatus" layoutX="192.0" layoutY="13.0" prefHeight="26.0" prefWidth="142.0" promptText="Status" />
                </children>
             </Pane>
          </center>

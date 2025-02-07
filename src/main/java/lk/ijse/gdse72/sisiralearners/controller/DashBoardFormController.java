@@ -90,7 +90,10 @@ public class DashBoardFormController {
     }
 
     @FXML
-    void btnPaymentOnAction(MouseEvent event) {
+    void btnPaymentOnAction(MouseEvent event) throws IOException {
+        homepage.getChildren().clear();
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/PaymentForm.fxml"));
+        homepage.getChildren().add(anchorPane);
 
     }
 
