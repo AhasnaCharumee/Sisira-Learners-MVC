@@ -202,6 +202,7 @@ public class StudentRegistrationFormController implements Initializable {
         cmbCourse.getSelectionModel().clearSelection();
         cmbStatus.getSelectionModel().select("Active");
         lblCourseFee.setText("00 000 .00");
+        btnRegister.setDisable(false);
     }
 
     private void loadActiveCourses() {
@@ -245,85 +246,98 @@ public class StudentRegistrationFormController implements Initializable {
 
             txtInitialPayment.setDisable(true);
             btnRegister.setDisable(true);
-            btnDelete.setDisable(false);
-            btnUpdate.setDisable(false);
         }
     }
 
-    @FXML
-    public void btnUpdateOnAction(ActionEvent actionEvent) throws SQLException {
-        String registrationId = txtStudentRegId.getText();
-        String studentId = studentModel.getStudentId(txtName.getText());
-        String name = txtName.getText();
-        String email = txtEmail.getText();
-        String nic = txtNIC.getText();
-        String contact = txtPhone.getText();
-        String courseName = cmbCourse.getSelectionModel().getSelectedItem();
-        String courseId = courseModel.getCourseId(courseName);
-        String status = cmbStatus.getSelectionModel().getSelectedItem();
+//    @FXML
+//    public void btnUpdateOnAction(ActionEvent actionEvent) throws SQLException {
+//        String registrationId = txtStudentRegId.getText();
+//        String studentId = studentModel.getStudentId(txtName.getText());
+//        String name = txtName.getText();
+//        String email = txtEmail.getText();
+//        String nic = txtNIC.getText();
+//        String contact = txtPhone.getText();
+//        String courseName = cmbCourse.getSelectionModel().getSelectedItem();
+//        String courseId = courseModel.getCourseId(courseName);
+//        String status = cmbStatus.getSelectionModel().getSelectedItem();
+//
+//        StudentDto studentDto = new StudentDto(studentId, name, email, nic, contact, 0.0);
+//        StudentRegistrationDto studentRegistrationDto = new StudentRegistrationDto(registrationId, studentId, courseId, null, status);
+//
+//        Connection connection = null;
+//        try {
+//            connection = DBConnection.getInstance().getConnection();
+//            connection.setAutoCommit(false);
+//
+//            boolean isStudentUpdated = studentModel.updateStudent(studentDto);
+//            if (!isStudentUpdated) throw new SQLException("Failed to update Student");
+//
+//            boolean isStudentRegistrationUpdated = studentRegistrationModel.updateStudentRegistration(studentRegistrationDto);
+//            if (!isStudentRegistrationUpdated) throw new SQLException("Failed to update StudentRegistration");
+//
+//            connection.commit();
+//            connection.setAutoCommit(true);
+//            new Alert(Alert.AlertType.INFORMATION, "Student updated successfully!").show();
+//        } catch (SQLException e) {
+//            try {
+//                if (connection != null) {
+//                    connection.rollback();
+//                    connection.setAutoCommit(true);
+//                }
+//            } catch (SQLException ex) {
+//                ex.printStackTrace();
+//            }
+//            new Alert(Alert.AlertType.ERROR, "Failed to update student: " + e.getMessage()).show();
+//        }
+//    }
 
-        StudentDto studentDto = new StudentDto(studentId, name, email, nic, contact, 0.0);
-        StudentRegistrationDto studentRegistrationDto = new StudentRegistrationDto(registrationId, studentId, courseId, null, status);
-
-        Connection connection = null;
-        try {
-            connection = DBConnection.getInstance().getConnection();
-            connection.setAutoCommit(false);
-
-            boolean isStudentUpdated = studentModel.updateStudent(studentDto);
-            if (!isStudentUpdated) throw new SQLException("Failed to update Student");
-
-            boolean isStudentRegistrationUpdated = studentRegistrationModel.updateStudentRegistration(studentRegistrationDto);
-            if (!isStudentRegistrationUpdated) throw new SQLException("Failed to update StudentRegistration");
-
-            connection.commit();
-            connection.setAutoCommit(true);
-            new Alert(Alert.AlertType.INFORMATION, "Student updated successfully!").show();
-        } catch (SQLException e) {
-            try {
-                if (connection != null) {
-                    connection.rollback();
-                    connection.setAutoCommit(true);
-                }
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
-            new Alert(Alert.AlertType.ERROR, "Failed to update student: " + e.getMessage()).show();
-        }
-    }
-
-    @FXML
-    public void btnDeleteOnAction(ActionEvent actionEvent) {
-        String registrationId = txtStudentRegId.getText();
-
-        Connection connection = null;
-        try {
-            connection = DBConnection.getInstance().getConnection();
-            connection.setAutoCommit(false);
-
-            boolean isPaymentDeleted = paymentModel.deletePaymentByRegistrationId(registrationId);
-            if (!isPaymentDeleted) throw new SQLException("Failed to delete from Payment");
-
-            boolean isStudentRegistrationDeleted = studentRegistrationModel.deleteStudentRegistration(registrationId);
-            if (!isStudentRegistrationDeleted) throw new SQLException("Failed to delete from StudentRegistration");
-
-            boolean isStudentDeleted = studentModel.deleteStudent(studentModel.getStudentId(txtName.getText()));
-            if (!isStudentDeleted) throw new SQLException("Failed to delete from Student");
-
-            connection.commit();
-            connection.setAutoCommit(true);
-            new Alert(Alert.AlertType.INFORMATION, "Student registration deleted successfully!").show();
-            btnResetOnAction(null); // Reset the form after deletion
-        } catch (SQLException e) {
-            try {
-                if (connection != null) {
-                    connection.rollback();
-                    connection.setAutoCommit(true);
-                }
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
-            new Alert(Alert.AlertType.ERROR, "Failed to delete student registration: " + e.getMessage()).show();
-        }
-    }
+//    @FXML
+//    public void btnDeleteOnAction(ActionEvent actionEvent) {
+//        String registrationId = txtStudentRegId.getText();
+//
+//        Connection connection = null;
+//        try {
+//            connection = DBConnection.getInstance().getConnection();
+//            connection.setAutoCommit(false);
+//
+//            boolean isPaymentDeleted = paymentModel.deletePaymentByRegistrationId(registrationId);
+//            if (!isPaymentDeleted) {
+//                connection.rollback();
+//                throw new SQLException("Failed to delete from Payment");
+//            }
+//
+//            boolean isStudentDeleted = studentModel.deleteStudent(studentModel.getStudentId(txtName.getText()));
+//            if (!isStudentDeleted) {
+//                connection.rollback();
+//                throw new SQLException("Failed to delete from Student");
+//            }
+//
+//            boolean isStudentRegistrationDeleted = studentRegistrationModel.deleteStudentRegistration(registrationId);
+//            if (!isStudentRegistrationDeleted) {
+//                connection.rollback();
+//                throw new SQLException("Failed to delete from StudentRegistration");
+//            }
+//
+//            connection.commit();
+//            new Alert(Alert.AlertType.INFORMATION, "Student registration deleted successfully!").show();
+//            btnResetOnAction(null); // Reset the form after deletion
+//        } catch (SQLException e) {
+//            try {
+//                if (connection != null) {
+//                    connection.rollback();
+//                }
+//            } catch (SQLException ex) {
+//                ex.printStackTrace();
+//            }
+//            new Alert(Alert.AlertType.ERROR, "Failed to delete student registration: " + e.getMessage()).show();
+//        } finally {
+//            try {
+//                if (connection != null) {
+//                    connection.setAutoCommit(true);
+//                }
+//            } catch (SQLException ex) {
+//                ex.printStackTrace();
+//            }
+//        }
+//    }
 }

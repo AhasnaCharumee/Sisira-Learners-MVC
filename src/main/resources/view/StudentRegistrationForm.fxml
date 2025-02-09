@@ -31,13 +31,13 @@
             <Pane prefHeight="487.0" prefWidth="1172.0" BorderPane.alignment="CENTER">
                <children>
                   <JFXTextField fx:id="txtStudentRegId" editable="false" labelFloat="true" layoutX="26.0" layoutY="14.0" prefHeight="26.0" prefWidth="106.0" />
-                  <JFXTextField fx:id="txtName" labelFloat="true" layoutX="351.0" layoutY="14.0" promptText="Name" />
-                  <JFXTextField fx:id="txtNIC" labelFloat="true" layoutX="554.0" layoutY="14.0" promptText="NIC" />
-                  <JFXTextField fx:id="txtPhone" labelFloat="true" layoutX="746.0" layoutY="14.0" promptText="Telephone" />
-                  <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="944.0" layoutY="14.0" promptText="Email" />
-                  <JFXComboBox fx:id="cmbCourse" labelFloat="true" layoutX="26.0" layoutY="61.0" prefHeight="26.0" prefWidth="171.0" promptText="Select Course" />
-                  <JFXTextField fx:id="txtInitialPayment" labelFloat="true" layoutX="473.0" layoutY="61.0" prefHeight="26.0" prefWidth="168.0" promptText="Initial Payment" />
-                  <Button fx:id="btnRegister" layoutX="750.0" layoutY="57.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="34.0" prefWidth="150.0" text="Register" />
+                  <JFXTextField fx:id="txtName" labelFloat="true" layoutX="332.0" layoutY="14.0" prefHeight="26.0" prefWidth="168.0" promptText="Name" />
+                  <JFXTextField fx:id="txtNIC" labelFloat="true" layoutX="545.0" layoutY="14.0" prefHeight="26.0" prefWidth="132.0" promptText="NIC" />
+                  <JFXTextField fx:id="txtPhone" labelFloat="true" layoutX="719.0" layoutY="14.0" prefHeight="26.0" prefWidth="130.0" promptText="Telephone" />
+                  <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="878.0" layoutY="14.0" prefHeight="26.0" prefWidth="211.0" promptText="Email" />
+                  <JFXComboBox fx:id="cmbCourse" labelFloat="true" layoutX="26.0" layoutY="71.0" prefHeight="26.0" prefWidth="171.0" promptText="Select Course" />
+                  <JFXTextField fx:id="txtInitialPayment" labelFloat="true" layoutX="473.0" layoutY="71.0" prefHeight="26.0" prefWidth="168.0" promptText="Initial Payment" />
+                  <Button fx:id="btnRegister" layoutX="750.0" layoutY="67.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="34.0" prefWidth="343.0" text="Register" />
                   <TableView fx:id="tblStudentRegistration" layoutX="26.0" layoutY="132.0" onMouseClicked="#tblSROnClicked" prefHeight="372.0" prefWidth="1112.0">
                     <columns>
                       <TableColumn fx:id="colReg" prefWidth="94.0" text="REG_ID" />
@@ -49,20 +49,18 @@
                         <TableColumn fx:id="colBalance" prefWidth="127.0" text="Pay_Balance" />
                     </columns>
                   </TableView>
-                  <ImageView fx:id="btnReset" fitHeight="42.0" fitWidth="44.0" layoutX="675.0" layoutY="53.0" onMouseClicked="#btnResetOnAction" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="btnReset" fitHeight="42.0" fitWidth="44.0" layoutX="675.0" layoutY="63.0" onMouseClicked="#btnResetOnAction" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/icons/icons8-reset-90.png" />
                      </image>
                   </ImageView>
-                  <JFXComboBox fx:id="cmbStatus" labelFloat="true" layoutX="192.0" layoutY="13.0" prefHeight="26.0" prefWidth="116.0" promptText="Status" />
-                  <Label layoutX="230.0" layoutY="67.0" prefHeight="20.0" prefWidth="107.0" text="Course Fee Rs.">
+                  <JFXComboBox fx:id="cmbStatus" labelFloat="true" layoutX="173.0" layoutY="13.0" prefHeight="26.0" prefWidth="116.0" promptText="Status" />
+                  <Label layoutX="230.0" layoutY="77.0" prefHeight="20.0" prefWidth="107.0" text="Course Fee Rs.">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblCourseFee" layoutX="345.0" layoutY="68.0" prefHeight="18.0" prefWidth="96.0" text="00 000 .00" />
-                  <Button fx:id="btnUpdate" layoutX="920.0" layoutY="57.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="34.0" prefWidth="105.0" text="Update" />
-                  <Button fx:id="btnDelete" layoutX="1045.0" layoutY="57.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="34.0" prefWidth="88.0" text="Delete" />
+                  <Label fx:id="lblCourseFee" layoutX="345.0" layoutY="78.0" prefHeight="18.0" prefWidth="96.0" text="00 000 .00" />
                </children>
             </Pane>
          </center>

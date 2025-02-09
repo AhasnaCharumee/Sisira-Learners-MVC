@@ -7,6 +7,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="dashBoardpane" prefHeight="720.0" prefWidth="1280.0" styleClass="pane" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse72.sisiralearners.controller.DashBoardFormController">
    <children>
@@ -92,6 +94,17 @@
                         <Image url="@../assets/icons/icons8-user-settings-96.png" />
                      </image>
                   </ImageView>
+                  <Label fx:id="lblDate" layoutX="932.0" layoutY="15.0" prefHeight="25.0" prefWidth="105.0" text="02-02-2025" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTime" layoutX="1081.0" layoutY="15.0" prefHeight="25.0" prefWidth="104.0" text="10 : 40 PM" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Line endX="-3.0" endY="14.0" layoutX="1067.0" layoutY="25.0" startX="-3.0" startY="-10.0" stroke="WHITE" strokeWidth="3.0" />
                </children>
             </AnchorPane>
          </top>

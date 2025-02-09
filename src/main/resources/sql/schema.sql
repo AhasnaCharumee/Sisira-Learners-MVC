@@ -4,7 +4,7 @@ USE DrivingSchoolDB;
 
 CREATE TABLE User (
                       user_id VARCHAR(10) PRIMARY KEY,
-                      name VARCHAR(100) NOT NULL,
+                      user_name VARCHAR(100) NOT NULL,
                       email VARCHAR(100) UNIQUE NOT NULL,
                       password VARCHAR(255) NOT NULL,
                       role VARCHAR(20) NOT NULL
@@ -101,12 +101,12 @@ CREATE TABLE Booking (
                              ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-INSERT INTO User (user_id, name, email, password, role) VALUES
-                                                            ('U001', 'John Doe', 'john.doe@example.com', 'password123', 'Admin'),
-                                                            ('U002', 'Jane Smith', 'jane.smith@example.com', 'password456', 'Instructor'),
-                                                            ('U003', 'Alice Johnson', 'alice.j@example.com', 'password789', 'Student'),
-                                                            ('U004', 'Bob Brown', 'bob.brown@example.com', 'password101', 'Student'),
-                                                            ('U005', 'Carol White', 'carol.white@example.com', 'password112', 'Instructor');
+INSERT INTO User (user_id, user_name, email, password, role) VALUES
+                                                            ('U001', 'admin', 'admin@example.com', '1234', 'Admin'),
+                                                            ('U002', 'Jane Smith', 'jane.smith@example.com', 'password456', 'User'),
+                                                            ('U003', 'Alice Johnson', 'alice.j@example.com', 'password789', 'User'),
+                                                            ('U004', 'Bob Brown', 'bob.brown@example.com', 'password101', 'User'),
+                                                            ('U005', 'Carol White', 'carol.white@example.com', 'password112', 'User');
 
 INSERT INTO Course (course_id, status, name, duration, price) VALUES
                                                                   ('C001', 'Active', 'Beginner Driving', 30, 500.00),
